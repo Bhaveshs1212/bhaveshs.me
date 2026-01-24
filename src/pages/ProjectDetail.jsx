@@ -54,15 +54,15 @@ function ProjectDetail() {
           )}
 
           {/* Project Image Container */}
-          <div className="relative overflow-hidden">
+          <div className="relative overflow-hidden max-h-[400px] ">
             {project.hasImage() ? (
               <img 
                 src={project.image} 
                 alt={project.title}
-                className="w-full h-auto rounded-3xl transition-transform duration-500 ease-out group-hover:scale-105"
+                className="w-full h-full object-cover rounded-3xl transition-transform duration-500 ease-out group-hover:scale-105"
               />
             ) : (
-              <div className={`${project.imageColor} w-full aspect-video rounded-3xl flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-105`}>
+              <div className={`${project.imageColor} w-full h-[450px] rounded-3xl flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-105`}>
                 <div className="w-[90%] h-[85%] bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 flex items-center justify-center">
                   <span className="text-black/30 font-bold text-4xl">{project.title}</span>
                 </div>
