@@ -2,6 +2,19 @@
 
 @import 'tailwindcss';
 
+/* Hide scrollbar for GitHub contribution calendar */
+.react-activity-calendar {
+  overflow: hidden !important;
+}
+
+.react-activity-calendar * {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.react-activity-calendar *::-webkit-scrollbar {
+  display: none !important;
+}
 
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -60,6 +73,24 @@ body {
   }
   50% {
     transform: scale(1.1);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 
