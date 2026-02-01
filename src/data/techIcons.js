@@ -13,8 +13,18 @@ import {
   SiStripe,
   SiVite,
   SiRadixui,
-  SiFramer
+  SiFramer,
+  SiAxios,
+  SiJsonwebtokens,
+  SiZod
 } from 'react-icons/si';
+import { 
+  FaLock,
+  FaChartBar,
+  FaWpforms,
+  FaFileUpload,
+  FaCode
+} from 'react-icons/fa';
 
 /**
  * Technology Icon Mapping
@@ -96,44 +106,44 @@ export const techIcons = {
     color: "#0055FF",
     name: "Framer Motion" 
   },
-  // Technologies without specific icons
+  // Technologies with specific icons
   "shadcn/ui": { 
-    icon: null, 
+    icon: FaCode, 
     color: "#FFFFFF",
     name: "shadcn/ui" 
   },
   "bcrypt": { 
-    icon: null, 
+    icon: FaLock, 
     color: "#FFFFFF",
     name: "bcrypt" 
   },
   "JWT": { 
-    icon: null, 
+    icon: SiJsonwebtokens, 
     color: "#FFFFFF",
     name: "JWT" 
   },
   "Axios": { 
-    icon: null, 
+    icon: SiAxios, 
     color: "#5A29E4",
     name: "Axios" 
   },
   "Recharts": { 
-    icon: null, 
+    icon: FaChartBar, 
     color: "#FF6B6B",
     name: "Recharts" 
   },
   "React Hook Form": { 
-    icon: null, 
+    icon: FaWpforms, 
     color: "#EC5990",
     name: "React Hook Form" 
   },
   "Zod": { 
-    icon: null, 
+    icon: SiZod, 
     color: "#3E67B1",
     name: "Zod" 
   },
   "Multer": { 
-    icon: null, 
+    icon: FaFileUpload, 
     color: "#F7B731",
     name: "Multer" 
   }
