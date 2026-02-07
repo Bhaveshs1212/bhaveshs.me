@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { SocialIcon } from 'react-social-icons'
 import { techIcons } from '../data/techIcons'
 import GitHubContributions from '../components/GitHubContributions'
 import LinkStats from '../components/LinkStats'
@@ -6,6 +8,8 @@ import ProjectCard from '../components/ProjectCard'
 import projectsData from '../data/projects'
 
 function Home() {
+  const [hoveredIcon, setHoveredIcon] = useState(null)
+
   return (
     <div className="min-h-screen bg-[#0B0B0C] text-[#F2F2F2]">
       {/* Hero Section */}
@@ -47,10 +51,12 @@ function Home() {
       </section>
 
       {/* GitHub Activity Calendar */}
-      <section className="max-w-4xl mx-auto py-12 px-">
-        <h2 className="text-xl font-bold mb-6 px-8 text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">GitHub Activity</h2>
+      <section className="max-w-4xl mx-auto py-12 px-8">
+        <h2 className="text-xl font-bold mb-6 text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">GitHub Activity</h2>
         
-        <GitHubContributions />
+        <div className="[&_.react-activity-calendar__scroll-container]:pl-6">
+          <GitHubContributions />
+        </div>
       </section>
 
       {/* Tech Stack Section */}
@@ -135,6 +141,69 @@ function Home() {
                 <ProjectCard project={project} />
               </div>
             ))}
+        </div>
+      </section>
+
+      {/* Get in Touch Section */}
+      <section className="max-w-4xl mx-auto py-6 px-8">
+        <h2 className="text-xl font-bold text-white mb-6">Get in Touch</h2>
+        
+        <p className="text-[#9A9A9A] leading-relaxed mb-6 max-w-4xl">
+          Have a project in mind or want to collaborate? I'm always open to discussing new opportunities, 
+          creative ideas, or just having a chat about technology and design.
+        </p>
+        
+        <p className="text-[#9A9A9A] mb-8">
+          Reach out via email at <a href="mailto:bhavesh.singhjayash@gmail.com" className="text-[#00ADB5] hover:text-[#0097A7] transition-colors">bhavesh.singhjayash@gmail.com</a>
+        </p>
+        
+        <div>
+          <h3 className="text-lg font-semibold text-white mb-4">Connect with me</h3>
+          <div className="flex gap-3">
+            <SocialIcon 
+              url="https://github.com/bhaveshs1212" 
+              style={{ height: 40, width: 40 }} 
+              bgColor={hoveredIcon === 'github' ? '#575656' : '#333'} 
+              fgColor="#fff"
+              target="_blank"
+              onMouseEnter={() => setHoveredIcon('github')}
+              onMouseLeave={() => setHoveredIcon(null)}
+            />
+            
+            <SocialIcon 
+              url="https://linkedin.com/in/bhavesh-singh12" 
+              style={{ height: 40, width: 40 }} 
+              bgColor={hoveredIcon === 'linkedin' ? '#0077B5' : '#333'} 
+              fgColor="#fff"
+              target="_blank"
+              onMouseEnter={() => setHoveredIcon('linkedin')}
+              onMouseLeave={() => setHoveredIcon(null)}
+            />
+            
+            <SocialIcon 
+              url="https://instagram.com/bhavesh" 
+              style={{ height: 40, width: 40 }} 
+              bgColor={hoveredIcon === 'instagram' ? '#E4405F' : '#333'} 
+              fgColor="#fff"
+              target="_blank"
+              onMouseEnter={() => setHoveredIcon('instagram')}
+              onMouseLeave={() => setHoveredIcon(null)}
+            />
+            
+            <SocialIcon 
+              url="https://twitter.com/bhavesh" 
+              style={{ height: 40, width: 40 }} 
+              bgColor={hoveredIcon === 'twitter' ? '#1DA1F2' : '#333'} 
+              fgColor="#fff"
+              target="_blank"
+              onMouseEnter={() => setHoveredIcon('twitter')}
+              onMouseLeave={() => setHoveredIcon(null)}
+            />
+            
+           
+            
+           
+          </div>
         </div>
       </section>
   </div>
