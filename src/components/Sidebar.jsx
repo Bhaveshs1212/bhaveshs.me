@@ -21,13 +21,12 @@ function Sidebar() {
               key={item.path}
               to={item.path}
               className={({ isActive }) =>
-                `group w-11 h-11 rounded-[14px] flex items-center justify-center transition-all duration-300 ${
+                `group relative w-11 h-11 rounded-[14px] flex items-center justify-center transition-all duration-300 ${
                   isActive
                     ? 'text-[#00D9FF] bg-[#00D9FF]/10 shadow-[0_0_20px_rgba(0,217,255,0.3)]'
                     : 'text-[#6F6F6F] hover:text-[#00D9FF] hover:bg-[#00D9FF]/10 hover:shadow-[0_0_20px_rgba(0,217,255,0.3)]'
                 }`
               }
-              title={item.label}
             >
               <Icon 
                 size={20} 
@@ -40,6 +39,10 @@ function Sidebar() {
                   ${item.animation === 'animate-head-bounce' ? 'group-hover:animate-head-bounce' : ''}
                 `}
               />
+              {/* Tooltip */}
+              <span className="absolute left-full ml-3 px-3 py-1.5 bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg text-white text-xs font-medium whitespace-nowrap opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none">
+                {item.label}
+              </span>
             </NavLink>
           );
         })}
