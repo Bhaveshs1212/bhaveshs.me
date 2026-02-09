@@ -109,7 +109,7 @@ function Connect() {
             </div>
             
             <a 
-              href="https://calendly.com/bhaveshsingh09" 
+              href="https://cal.com/bhavesh-singh12" 
               target="_blank" 
               rel="noopener noreferrer"
               className="block w-full bg-white text-black text-center py-3 px-6 rounded-lg font-medium hover:bg-gray-100 transition-colors"
