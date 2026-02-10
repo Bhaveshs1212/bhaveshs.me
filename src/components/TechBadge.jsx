@@ -10,9 +10,9 @@ function TechBadge({ technology, className = "" }) {
 
   return (
     <span 
-      className={`bg-[#1A1A1A] text-[#E0E0E0] px-3 py-1.5 rounded-full text-xs font-medium border border-[#2A2A2A] hover:border-[#3A3A3A] transition-colors duration-200 flex items-center gap-1.5 ${className}`}
+      className={`bg-[#1A1A1A] text-[#E0E0E0] px-2 py-1 rounded-full text-[10px] font-medium border border-[#2A2A2A] hover:border-[#3A3A3A] transition-colors duration-200 flex items-center gap-1 ${className}`}
     >
-      {Icon && <Icon style={{ color: techInfo.color }} className="text-sm" />}
+      {Icon && <Icon style={{ color: techInfo.color }} className="text-xs" />}
       {techInfo.name}
     </span>
   );
