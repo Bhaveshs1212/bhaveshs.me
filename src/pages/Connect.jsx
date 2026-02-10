@@ -40,7 +40,7 @@ function Connect() {
 
   return (
     <div className="min-h-screen bg-[#0B0B0C] text-[#F2F2F2]">
-      <div className="max-w-6xl mx-auto px-4 md:px-8 py-8 md:py-16 pb-16 md:pb-16">
+      <div className="max-w-4xl mx-auto px-4 md:px-8 py-8 md:py-16 pb-16 md:pb-16">
         
         {/* Header Section */}
         <div className="mb-10 md:mb-12">

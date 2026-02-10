@@ -13,7 +13,7 @@ function Home() {
   return (
     <div className="min-h-screen bg-[#0B0B0C] text-[#F2F2F2]">
       {/* Hero Section */}
-      <section className="max-w-6xl mx-auto pt-8 md:pt-16 pb-6 px-4 md:px-8">
+      <section className="max-w-4xl mx-auto pt-8 md:pt-16 pb-6 px-4 md:px-8">
         <p className="text-[#6F6F6F] text-xs uppercase tracking-wider mb-6 md:mb-8">
           Developer / Builder / Open Source
         </p>
@@ -51,7 +51,7 @@ function Home() {
       </section>
 
       {/* GitHub Activity Calendar */}
-      <section className="max-w-6xl mx-auto py-8 md:py-12 px-4 md:px-8">
+      <section className="max-w-4xl mx-auto py-8 md:py-12 px-4 md:px-8">
         <h2 className="text-lg md:text-xl font-bold mb-4 md:mb-6 text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">GitHub Activity</h2>
         
         <div className="[&_.react-activity-calendar__scroll-container]:pl-6">
@@ -60,7 +60,7 @@ function Home() {
       </section>
 
       {/* Tech Stack Section */}
-      <section className="max-w-6xl mx-auto pb-6 px-4 md:px-8">
+      <section className="max-w-4xl mx-auto pb-6 px-4 md:px-8">
         <h2 className="text-lg md:text-xl font-bold mb-4 md:mb-6 text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Tools that I have used</h2>
         
         <div className="relative overflow-hidden">
@@ -121,7 +121,7 @@ function Home() {
       </section>  
       
       {/* Featured Projects Section */}
-      <section className="max-w-6xl mx-auto py-8 md:py-12 px-4 md:px-8">
+      <section className="max-w-4xl mx-auto py-8 md:py-12 px-4 md:px-8">
         <div className="flex justify-between items-center mb-6 md:mb-8">
           <h2 className="text-lg md:text-xl font-bold text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Featured Projects</h2>
           <Link 
@@ -145,7 +145,7 @@ function Home() {
       </section>
 
       {/* Get in Touch Section */}
-      <section className="max-w-6xl mx-auto py-6 px-4 md:px-8 pb-16 md:pb-16">
+      <section className="max-w-4xl mx-auto py-6 px-4 md:px-8 pb-16 md:pb-16">
         <h2 className="text-lg md:text-xl font-bold text-white mb-4 md:mb-6">Get in Touch</h2>
         
         <p className="text-sm md:text-base text-[#9A9A9A] leading-relaxed mb-4 md:mb-6 max-w-4xl">

@@ -12,7 +12,7 @@ function About() {
 
   return (
     <div className="min-h-screen bg-[#0B0B0C] text-[#F2F2F2]">
-      <div className="max-w-6xl mx-auto px-4 md:px-6 pt-8 md:pt-16 pb-16 md:pb-16 w-full">
+      <div className="max-w-5xl mx-auto px-4 md:px-6 pt-8 md:pt-16 pb-16 md:pb-16 w-full">
         
         {/* Header Section */}
         <div className="mb-8">
