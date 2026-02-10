@@ -13,7 +13,7 @@ function Home() {
   return (
     <div className="min-h-screen bg-[#0B0B0C] text-[#F2F2F2]">
       {/* Hero Section */}
-      <section className="max-w-4xl mx-auto pt-32 pb-6 px-8">
+      <section className="max-w-4xl mx-auto pt-24 pb-6 px-8">
         <p className="text-[#6F6F6F] text-xs uppercase tracking-wider mb-8">
           Developer / Builder / Open Source
         </p>

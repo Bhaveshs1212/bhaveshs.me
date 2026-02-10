@@ -11,8 +11,8 @@ function About() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0B0B0C] text-[#F2F2F2] flex items-center">
-      <div className="max-w-5xl mx-auto px-6 py-16 w-full">
+    <div className="min-h-screen bg-[#0B0B0C] text-[#F2F2F2]">
+      <div className="max-w-5xl mx-auto px-6 pt-24 pb-16 w-full">
         
         {/* Header Section */}
         <div className="mb-8">

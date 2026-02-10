@@ -9,7 +9,7 @@ function Projects() {
   return (
     <div className="min-h-screen bg-[#0B0B0C] text-[#F2F2F2]">
       {/* Breadcrumb */}
-      <div className="max-w-4xl mx-auto pt-16 pb-8 px-8">
+      <div className="max-w-4xl mx-auto pt-24 pb-8 px-8">
         <div className="flex items-center gap-2 text-sm text-[#9A9A9A]">
           <Link to="/" className="hover:text-[#F2F2F2] transition-colors duration-200">
             Home

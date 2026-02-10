@@ -78,7 +78,9 @@ function Connect() {
             </div>
             
             <a 
-              href="mailto:bhavesh.singhjayash@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&to=bhavesh.singhjayash@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 p-3 bg-[#333] border border-[#555] rounded-lg w-full hover:bg-[#444] transition-colors"
             >
               <svg className="w-4 h-4 text-[#9A9A9A]" fill="currentColor" viewBox="0 0 20 20">
@@ -147,7 +149,7 @@ function Connect() {
         </div>
 
         {/* Current Status */}
-        <div className="bg-[#0B0B0C] border border-[#2A2A2A] rounded-xl p-6 text-center hover:bg-[#1A1A1A] hover:border-cyan-400/50 transition-all duration-300">
+        <div className="text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
             <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
             <span className="text-cyan-400 text-xs">Currently Available</span>
@@ -164,7 +166,9 @@ function Connect() {
           
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a 
-              href="mailto:bhavesh.singhjayash@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&to=bhavesh.singhjayash@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-4 py-2 bg-white text-black rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors"
             >
               Send Email

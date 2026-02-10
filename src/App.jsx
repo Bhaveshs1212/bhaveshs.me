@@ -1,4 +1,5 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 import Sidebar from './components/Sidebar'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -8,6 +9,25 @@ import Connect from './pages/Connect'
 import Skills from './pages/Skills'
 
 function App() {
+  const location = useLocation()
+
+  useEffect(() => {
+    const pathToTitle = {
+      '/': 'Home',
+      '/about': 'About',
+      '/projects': 'Projects',
+      '/connect': 'Connect',
+      '/skills': 'Skills'
+    }
+
+    // Handle project detail pages
+    if (location.pathname.startsWith('/projects/')) {
+      document.title = 'Project Details | Bhavesh Singh'
+    } else {
+      const pageTitle = pathToTitle[location.pathname] || 'Bhavesh Singh'
+      document.title = pageTitle === 'Home' ? 'Home | Bhavesh Singh' : `${pageTitle} | Bhavesh Singh`
+    }
+  }, [location])
   return (
     <div className="min-h-screen bg-[#0B0B0C]">
       {/* BS Trademark Logo */}
