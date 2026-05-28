@@ -1,240 +1,212 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { ChevronRight } from 'lucide-react'
+import {
+  CAL_COM_URL,
+  EMAIL,
+  RESUME_DOWNLOAD_NAME,
+  RESUME_URL,
+} from '../constants/profile'
+import { focusAreas } from '../data/about'
+import { getFeaturedProjects } from '../data/projects'
+import { PersonalLifeAbout } from '../components/PersonalLifeSection'
+
+const accentLink =
+  'text-[#00adb5] hover:text-[#0097a7] transition-colors underline-offset-4 hover:underline'
 
 function About() {
   const [emailCopied, setEmailCopied] = useState(false)
+  const featuredProjects = getFeaturedProjects().slice(0, 2)
 
   const copyEmail = () => {
-    navigator.clipboard.writeText('harshvardhan0920@gmail.com')
+    navigator.clipboard.writeText(EMAIL)
     setEmailCopied(true)
     setTimeout(() => setEmailCopied(false), 2000)
   }
 
   return (
     <div className="min-h-screen bg-[#0B0B0C] text-[#F2F2F2]">
-      <div className="max-w-5xl mx-auto px-4 md:px-6 pt-8 md:pt-16 pb-16 md:pb-16 w-full">
-        
-        {/* Header Section */}
-        <div className="mb-8">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-green-500 text-sm font-medium">Available for new projects</span>
-          </div>
-          
-          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl leading-[1.1] mb-6 text-[#F2F2F2]">
-            Building products that drive growth
+      <div className="max-w-4xl mx-auto px-4 md:px-8 pt-8 md:pt-16 pb-16 md:pb-20 space-y-14">
+        {/* Hero */}
+        <section aria-label="About Me">
+          <h1 className="text-2xl sm:text-3xl font-semibold text-[#F2F2F2] mb-5">
+            Bhavesh Singh
           </h1>
-          
-          <p className="text-[#B0B0B0] text-base md:text-lg leading-relaxed max-w-3xl">
-            I partner with startups and growing companies to transform ideas into market-ready products. Specializing in full-stack 
-            development with a focus on speed, scalability, and user experience.
-          </p>
-        </div>
 
-        {/* Main Two-Column Layout */}
-        <div className="grid lg:grid-cols-[1fr_280px] gap-4 md:gap-5">
-          
-          {/* Left Column - Services and Stats */}
-          <div>
-            {/* Services Grid */}
-            <div className="grid sm:grid-cols-2 gap-2.5 md:gap-3 mb-4 md:mb-5">
-          
-          {/* MVP Development */}
-          <div className="bg-[#0B0B0C] border border-[#2A2A2A] rounded-lg p-3 md:p-4 hover:bg-[#1A1A1A] hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 hover:scale-[1.02]">
-            <div className="flex items-center gap-2 mb-2">
-              <div className="w-5 h-5 bg-cyan-400 rounded flex items-center justify-center">
-                <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
-                </svg>
-              </div>
-              <h3 className="text-white font-semibold text-sm md:text-base">MVP Development</h3>
+          <div className="grid gap-8 sm:gap-6 md:grid-cols-3">
+            <div className="order-2 space-y-4 sm:order-1 md:col-span-2">
+              <p className="text-[#B0B0B0] text-sm sm:text-base leading-relaxed">
+                I&apos;ve been building since before I had a clear plan for it.
+                Websites, side projects, internships, and full-stack products that
+                taught me more than any single course could.
+              </p>
+
+              <p className="text-[#B0B0B0] text-sm sm:text-base leading-relaxed">
+                I&apos;m a developer from India who enjoys practical,
+                user-focused applications — from DSA learning platforms to
+                production-grade web apps. I care about clean architecture,
+                readable code, and shipping things that actually work.
+              </p>
+
+              <p className="text-[#B0B0B0] text-sm sm:text-base leading-relaxed">
+                What keeps me going isn&apos;t just the technology. It&apos;s
+                understanding systems, solving real problems, and getting a little
+                better with every project. I&apos;m focused on strengthening my
+                fundamentals while contributing to work that matters.
+              </p>
+
+              <p className="text-[#B0B0B0] text-sm sm:text-base leading-relaxed">
+                For the full picture, see my{' '}
+                <a
+                  href={RESUME_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={accentLink}
+                >
+                  resume
+                </a>
+                ,{' '}
+                <a href={RESUME_URL} download={RESUME_DOWNLOAD_NAME} className={accentLink}>
+                  download a copy
+                </a>
+                , or{' '}
+                <button type="button" onClick={copyEmail} className={accentLink}>
+                  {emailCopied ? 'email copied' : 'copy my email'}
+                </button>
+                .
+              </p>
             </div>
-            <p className="text-[#B0B0B0] text-sm mb-3 leading-snug">Launch-ready products in 4-8 weeks</p>
-            <div className="flex gap-2 flex-wrap">
-              <span className="px-2 py-1 bg-[#333] text-xs rounded text-[#E0E0E0]">React</span>
-              <span className="px-2 py-1 bg-[#333] text-xs rounded text-[#E0E0E0]">Node.js</span>
-              <span className="px-2 py-1 bg-[#333] text-xs rounded text-[#E0E0E0]">MongoDB</span>
+
+            <div className="relative order-1 block aspect-square sm:order-2">
+              <div className="absolute inset-0 -z-10 size-full rounded-md bg-[#00adb5]/20" />
+              <img
+                src="/Profile-image.png"
+                alt="Bhavesh Singh"
+                className="size-full -rotate-3 transform rounded-md shadow-md object-cover object-center"
+              />
             </div>
           </div>
+        </section>
 
-          {/* SaaS Platforms */}
-          <div className="bg-[#0B0B0C] border border-[#2A2A2A] rounded-lg p-3 md:p-4 hover:bg-[#1A1A1A] hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 hover:scale-[1.02]">
-            <div className="flex items-center gap-2 mb-2">
-              <div className="w-5 h-5 bg-cyan-400 rounded flex items-center justify-center">
-                <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
-                </svg>
-              </div>
-              <h3 className="text-white font-semibold text-sm md:text-base">SaaS Platforms</h3>
-            </div>
-            <p className="text-[#B0B0B0] text-sm mb-3 leading-snug">Scalable architecture for growth</p>
-            <div className="flex gap-2 flex-wrap">
-              <span className="px-2 py-1 bg-[#333] text-xs rounded text-[#E0E0E0]">Next.js</span>
-              <span className="px-2 py-1 bg-[#333] text-xs rounded text-[#E0E0E0]">PostgreSQL</span>
-              <span className="px-2 py-1 bg-[#333] text-xs rounded text-[#E0E0E0]">AWS</span>
-            </div>
-          </div>
-
-          {/* AI Integration */}
-          <div className="bg-[#0B0B0C] border border-[#2A2A2A] rounded-lg p-3 md:p-4 hover:bg-[#1A1A1A] hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 hover:scale-[1.02]">
-            <div className="flex items-center gap-2 mb-2">
-              <div className="w-5 h-5 bg-cyan-400 rounded flex items-center justify-center">
-                <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z"/>
-                </svg>
-              </div>
-              <h3 className="text-white font-semibold text-sm md:text-base">AI Integration</h3>
-            </div>
-            <p className="text-[#B0B0B0] text-sm mb-3 leading-snug">GenAI features that drive value</p>
-            <div className="flex gap-2 flex-wrap">
-              <span className="px-2 py-1 bg-[#333] text-xs rounded text-[#E0E0E0]">OpenAI</span>
-              <span className="px-2 py-1 bg-[#333] text-xs rounded text-[#E0E0E0]">LangChain</span>
-              <span className="px-2 py-1 bg-[#333] text-xs rounded text-[#E0E0E0]">Python</span>
-            </div>
-          </div>
-
-          {/* Admin Dashboards */}
-          <div className="bg-[#0B0B0C] border border-[#2A2A2A] rounded-lg p-3 md:p-4 hover:bg-[#1A1A1A] hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-400/20 transition-all duration-300 hover:scale-[1.02]">
-            <div className="flex items-center gap-2 mb-2">
-              <div className="w-5 h-5 bg-cyan-400 rounded flex items-center justify-center">
-                <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"/>
-                  <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"/>
-                </svg>
-              </div>
-              <h3 className="text-white font-semibold text-sm md:text-base">Admin Dashboards</h3>
-            </div>
-            <p className="text-[#B0B0B0] text-sm mb-3 leading-snug">Data-driven business insights</p>
-            <div className="flex gap-2 flex-wrap">
-              <span className="px-2 py-1 bg-[#333] text-xs rounded text-[#E0E0E0]">React</span>
-              <span className="px-2 py-1 bg-[#333] text-xs rounded text-[#E0E0E0]">D3.js</span>
-              <span className="px-2 py-1 bg-[#333] text-xs rounded text-[#E0E0E0]">FastAPI</span>
-            </div>
-          </div>
-
-            </div>
-
-            {/* Decorative Divider */}
-            <div className="relative my-4 md:my-5">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-[#2A2A2A]"></div>
-              </div>
-              <div className="relative flex justify-center">
-                <div className="bg-[#0B0B0C] px-3">
-                  <div className="flex gap-1">
-                    <div className="w-1 h-1 rounded-full bg-cyan-400/40"></div>
-                    <div className="w-1 h-1 rounded-full bg-cyan-400/60"></div>
-                    <div className="w-1 h-1 rounded-full bg-cyan-400"></div>
-                    <div className="w-1 h-1 rounded-full bg-cyan-400/60"></div>
-                    <div className="w-1 h-1 rounded-full bg-cyan-400/40"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Stats Section */}
-            <div className="grid grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
-              <div className="text-center">
-                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">2+</div>
-                <div className="text-[#B0B0B0] text-sm md:text-base">Years Building Products</div>
-              </div>
-              <div className="text-center">
-                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">15+</div>
-                <div className="text-[#B0B0B0] text-sm md:text-base">Projects Delivered</div>
-              </div>
-              <div className="text-center">
-                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">100%</div>
-                <div className="text-[#B0B0B0] text-sm md:text-base">Client Satisfaction</div>
-              </div>
-              <div className="text-center">
-                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">48hrs</div>
-                <div className="text-[#B0B0B0] text-sm md:text-base">Response Time</div>
-              </div>
-            </div>
-
-            {/* Resume Download */}
-            <div className="flex justify-center md:justify-start">
-              <a 
-                href="/resume.pdf" 
-                download
-                className="inline-flex items-center gap-2 py-2 px-4 bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg text-[#B0B0B0] hover:text-white hover:border-cyan-400/30 hover:bg-[#222] transition-all text-sm md:text-base font-medium">
-              
-                <svg className="w-3 h-3 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                Download Resume
-              </a>
-            </div>
-          </div>
-
-          {/* Right Column - Profile Card */}
-          <div>
-            <div className="bg-[#0B0B0C] border border-[#2A2A2A] rounded-lg p-4 md:p-5 sticky top-4">
-              {/* Profile Image */}
-              <div className="flex justify-center mb-4 md:mb-5">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-cyan-400 shadow-lg bg-white/10 flex-shrink-0">
-                  <img 
-                    src="/Profile-image.png" 
-                    alt="Bhavesh"
-                    className="w-full h-full object-cover object-center filter brightness-110 contrast-110"
-                  />
-                </div>
-              </div>
-              
-              {/* Name and Title */}
-              <div className="text-center mb-4 md:mb-5">
-                <h2 className="text-white text-lg md:text-xl font-bold mb-1">Bhavesh</h2>
-                <p className="text-[#B0B0B0] text-xs font-medium mb-2 md:mb-3">Full-Stack Developer & Product Builder</p>
-                <p className="text-[#B0B0B0] text-xs leading-relaxed">
-                  Helping startups and businesses launch faster with clean code, modern architecture, and strategic technical decisions.
+        {/* Focus */}
+        <section aria-label="What I focus on" className="space-y-6">
+          <h2 className="text-lg sm:text-xl font-semibold text-[#F2F2F2]">
+            What I focus on
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {focusAreas.map((area) => (
+              <div
+                key={area.title}
+                className="rounded-lg border border-[#2A2A2A] bg-[#111]/40 p-5 transition-colors duration-300 hover:border-[#3A3A3A]"
+              >
+                <h3 className="text-sm font-medium text-[#F2F2F2] mb-2">
+                  {area.title}
+                </h3>
+                <p className="text-sm text-[#9A9A9A] leading-relaxed">
+                  {area.description}
                 </p>
               </div>
+            ))}
+          </div>
+        </section>
 
-              {/* Core Technologies */}
-              <div className="mb-4 md:mb-5">
-                <h4 className="text-white font-bold text-xs mb-2 md:mb-3 uppercase tracking-wider">CORE TECHNOLOGIES</h4>
-                <div className="flex gap-1.5 md:gap-2 flex-wrap">
-                  <span className="px-2 py-1 bg-blue-500/10 text-blue-400 text-xs rounded border border-blue-500/20">React</span>
-                  <span className="px-2 py-1 bg-green-500/10 text-green-400 text-xs rounded border border-green-500/20">Node.js</span>
-                  <span className="px-2 py-1 bg-green-500/10 text-green-400 text-xs rounded border border-green-500/20">MongoDB</span>
-                  <span className="px-2 py-1 bg-orange-500/10 text-orange-400 text-xs rounded border border-orange-500/20">AWS</span>
-                  <span className="px-2 py-1 bg-yellow-500/10 text-yellow-400 text-xs rounded border border-yellow-500/20">Python</span>
-                  <span className="px-2 py-1 bg-blue-500/10 text-blue-400 text-xs rounded border border-blue-500/20">TypeScript</span>
-                </div>
-              </div>
-
-              {/* Email */}
-              <div className="mb-3 md:mb-4">
-                <button 
-                  onClick={copyEmail}
-                  className="flex items-center gap-2 p-2 md:p-2.5 bg-[#1A1A1A] border border-[#2A2A2A] rounded-lg w-full hover:bg-[#222] transition-colors">
-                
-                  <svg className="w-3.5 h-3.5 text-[#B0B0B0]" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
-                  </svg>
-                  <div className="text-left flex-1 min-w-0">
-                    <div className="text-white text-xs truncate">bhavesh.singhjayash@gmail.com</div>
-                    <div className="text-[#B0B0B0] text-[10px]">
-                      {emailCopied ? 'Copied!' : 'Click to copy'}
+        {/* Featured work */}
+        {featuredProjects.length > 0 && (
+          <section aria-label="Selected work" className="space-y-6">
+            <h2 className="text-lg sm:text-xl font-semibold text-[#F2F2F2]">
+              Selected work
+            </h2>
+            <div className="grid gap-4">
+              {featuredProjects.map((project, index) => (
+                <Link
+                  key={project.slug}
+                  to={`/projects/${project.slug}`}
+                  className="group block"
+                  onClick={() => window.scrollTo(0, 0)}
+                >
+                  <div
+                    className={`flex flex-col gap-4 overflow-hidden rounded-lg border border-[#2A2A2A] bg-[#111]/40 p-4 sm:p-5 transition-all duration-300 hover:border-[#3A3A3A] hover:shadow-lg hover:shadow-black/20 sm:gap-5 ${
+                      index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'
+                    }`}
+                  >
+                    {project.hasImage() && (
+                      <div className="relative aspect-video w-full shrink-0 overflow-hidden rounded-md border border-[#2A2A2A]/60 bg-[#1A1A1A] sm:aspect-auto sm:w-44 sm:self-stretch md:w-48">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </div>
+                    )}
+                    <div className="flex-1 sm:py-1">
+                      <h3 className="text-base font-medium text-[#F2F2F2] mb-2">
+                        {project.title}
+                      </h3>
+                      <p className="text-sm text-[#9A9A9A] leading-relaxed">
+                        {project.tagline || project.shortDescription}
+                      </p>
                     </div>
                   </div>
-                </button>
-              </div>
-
-              {/* CTA Button */}
-              <Link 
-                to="/connect"
-                className="block w-full bg-white text-black text-center py-2.5 px-4 rounded-lg text-sm font-bold hover:bg-gray-100 transition-colors shadow-lg shadow-white/5"
-                onClick={() => window.scrollTo(0, 0)}
-              >
-                Let's Work Together
-              </Link>
+                </Link>
+              ))}
             </div>
+            <Link
+              to="/projects"
+              className="inline-flex items-center gap-2 text-sm font-medium text-[#00adb5] hover:text-[#0097a7] transition-colors"
+              onClick={() => window.scrollTo(0, 0)}
+            >
+              View all projects
+              <ChevronRight className="size-4" />
+            </Link>
+          </section>
+        )}
+
+        {/* Get in touch */}
+        <section aria-label="Get in Touch" className="space-y-6">
+          <h2 className="text-lg sm:text-xl font-semibold text-[#F2F2F2]">
+            Get in Touch
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <a
+              href={CAL_COM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block h-full"
+            >
+              <div className="h-full rounded-lg border-2 border-[#00adb5]/20 bg-[#00adb5]/5 p-6 transition-all duration-300 hover:border-[#00adb5]/40 hover:bg-[#00adb5]/10">
+                <h3 className="text-base font-medium text-[#F2F2F2] mb-3">
+                  Book a Call
+                </h3>
+                <p className="text-sm text-[#9A9A9A] mb-3 leading-relaxed">
+                  30 minutes. Your project, your idea, or just a conversation
+                  about something you&apos;re building.
+                </p>
+                <div className="flex items-center gap-2 text-[#00adb5] text-sm font-medium">
+                  <span>Schedule now</span>
+                  <ChevronRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </div>
+              </div>
+            </a>
+
+            <Link to="/connect" className="group block h-full" onClick={() => window.scrollTo(0, 0)}>
+              <div className="h-full rounded-lg border border-[#2A2A2A] bg-[#111]/40 p-6 transition-all duration-300 hover:border-[#3A3A3A] hover:bg-[#1A1A1A]/50">
+                <h3 className="text-base font-medium text-[#F2F2F2] mb-3">
+                  Connect
+                </h3>
+                <p className="text-sm text-[#9A9A9A] mb-3 leading-relaxed">
+                  Email, social links, and every way to reach me in one place.
+                </p>
+                <div className="flex items-center gap-2 text-[#00adb5] text-sm font-medium">
+                  <span>Go to connect</span>
+                  <ChevronRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </div>
+              </div>
+            </Link>
           </div>
+        </section>
 
-        </div>
-
+        {/* Outside the screen */}
+        <PersonalLifeAbout />
       </div>
     </div>
   )

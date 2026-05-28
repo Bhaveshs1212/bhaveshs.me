@@ -1,11 +1,16 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import { ChevronRight } from 'lucide-react'
 import { SocialIcon } from 'react-social-icons'
 import { techIcons } from '../data/techIcons'
-import GitHubContributions from '../components/GitHubContributions'
-import LinkStats from '../components/LinkStats'
+import { EMAIL, MAILTO_URL } from '../constants/profile'
+import CodingActivity from '../components/coding-activity'
 import ProjectCard from '../components/ProjectCard'
 import projectsData from '../data/projects'
+import OutsideTheScreen from '../components/OutsideTheScreen'
+
+const accentLink =
+  'text-[#00adb5] hover:text-[#0097a7] transition-colors underline-offset-4 hover:underline'
 
 function Home() {
   const [hoveredIcon, setHoveredIcon] = useState(null)
@@ -14,49 +19,56 @@ function Home() {
     <div className="min-h-screen bg-[#0B0B0C] text-[#F2F2F2]">
       {/* Hero Section */}
       <section className="max-w-4xl mx-auto pt-8 md:pt-16 pb-6 px-4 md:px-8">
-        <p className="text-[#B0B0B0] text-sm md:text-base uppercase tracking-wider mb-6 md:mb-8 font-medium">
-          Developer / Builder / Open Source
-        </p>
-
-        <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] mb-6 md:mb-8">
-          I experiment with ideas that push me forward.
+        <h1 className="text-2xl sm:text-3xl font-semibold text-[#F2F2F2] mb-1">
+          Bhavesh Singh
         </h1>
+        <p className="text-sm text-[#9A9A9A] mb-6">Developer / Builder</p>
 
-        <div className="space-y-4 md:space-y-6 text-[#B0B0B0] text-base md:text-lg leading-relaxed">
+        <div className="space-y-4 text-[#B0B0B0] text-sm sm:text-base leading-relaxed max-w-2xl">
           <p>
-            Hello! I'm <span className="text-[#F2F2F2] font-medium">Bhavesh Singh</span>, a developer from India who enjoys building practical, user-focused web applications and experimenting with new technologies.
+            I build full-stack web applications — practical, user-focused products
+            from structured learning platforms to production-grade web apps.
           </p>
           <p>
-            I've worked on multiple full-stack projects, explored real-world problem solving through internships and independent builds, and continuously improve my skills through hands-on development.
+            Based in India. I care about clean architecture, readable code, and
+            shipping things that work. Right now I&apos;m focused on deepening my
+            fundamentals through hands-on projects and consistent problem-solving.
           </p>
           <p>
-            I'm focused on strengthening my fundamentals in development and problem-solving while contributing to meaningful projects.
+            If this sounds interesting,{' '}
+            <Link to="/connect" className={accentLink}>
+              reach out
+            </Link>
+            {' '}or{' '}
+            <Link to="/projects" className={accentLink}>
+              see my work
+            </Link>
+            .
           </p>
         </div>
 
-        <div className="mt-12 flex gap-6 items-center">
+        <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
           <Link
             to="/connect"
-            className="bg-white text-[#0B0B0C] px-6 py-3 rounded-lg font-bold text-sm md:text-base hover:bg-gray-100 transition-colors"
+            className="inline-flex items-center gap-1 font-medium text-[#00adb5] hover:text-[#0097a7] transition-colors"
           >
-            Contact Me →
+            Get in touch
+            <ChevronRight className="size-4" />
           </Link>
           <Link
             to="/projects"
-            className="text-[#B0B0B0] hover:text-white font-medium text-sm md:text-base transition-colors"
+            className="text-[#9A9A9A] hover:text-[#F2F2F2] transition-colors"
           >
-            View Projects
+            View projects
           </Link>
         </div>
       </section>
 
-      {/* GitHub Activity Calendar */}
+      {/* Activity Calendar */}
       <section className="max-w-4xl mx-auto py-8 md:py-12 px-4 md:px-8">
-        <h2 className="text-lg md:text-xl font-bold mb-4 md:mb-6 text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">GitHub Activity</h2>
+        <h2 className="text-lg md:text-xl font-bold mb-4 md:mb-6 text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Activity</h2>
         
-        <div className="[&_.react-activity-calendar__scroll-container]:pl-6">
-          <GitHubContributions />
-        </div>
+        <CodingActivity />
       </section>
 
       {/* Tech Stack Section */}
@@ -144,6 +156,11 @@ function Home() {
         </div>
       </section>
 
+      {/* Outside the Screen */}
+      <section className="max-w-4xl mx-auto py-8 md:py-12 px-4 md:px-8">
+        <OutsideTheScreen />
+      </section>
+
       {/* Get in Touch Section */}
       <section className="max-w-4xl mx-auto py-6 px-4 md:px-8 pb-16 md:pb-16">
         <h2 className="text-xl md:text-2xl font-bold text-white mb-6 md:mb-8">Get in Touch</h2>
@@ -154,7 +171,7 @@ function Home() {
         </p>
         
         <p className="text-base md:text-lg text-[#B0B0B0] mb-8 md:mb-10">
-          Reach out via email at <a href="mailto:bhavesh.singhjayash@gmail.com" className="text-[#00ADB5] hover:text-[#0097A7] transition-colors font-medium">bhavesh.singhjayash@gmail.com</a>
+          Reach out via email at <a href={MAILTO_URL} className="text-[#00ADB5] hover:text-[#0097A7] transition-colors font-medium">{EMAIL}</a>
         </p>
         
         <div>
