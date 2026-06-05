@@ -111,89 +111,88 @@ Key features include a dynamic admin dashboard with analytics, blog and event ma
 
   new Project({
     id: 3,
-    slug: "openlearn",
-    title: "OpenLearn",
-    tagline: "Democratising Learning, Transforming Futures",
-    shortDescription: "A full-stack cohort learning platform with gamified progression and role-based collaboration built using TypeScript and React 19.",
-    fullDescription: `OpenLearn is a comprehensive cohort-based learning platform that revolutionizes online education through gamification, role-based access control, and collaborative learning environments. Built with modern TypeScript and React 19, the platform features a sophisticated hierarchical RBAC system with 5 levels ranging from Grand Pathfinder to Luminary, enabling structured mentorship and progression tracking.
+    slug: "portfolio",
+    title: "Portfolio Website",
+    tagline: "A Developer Portfolio Built to Ship",
+    shortDescription: "Personal portfolio showcasing projects, skills, unified GitHub + LeetCode activity, and a minimal editorial design — built with React and Vite.",
+    fullDescription: `This portfolio is a production-ready single-page application designed and built from scratch to present my work, skills, and coding activity in a clean, professional way.
 
-The platform implements cohort-based learning with specialization leagues, allowing learners to join specific learning paths and compete within their peer groups. Gamification elements include badges, leaderboards, and progress tracking to maintain engagement and motivation. The assignment submission system includes grading workflows and detailed feedback mechanisms. Security is ensured through OTP-based email verification and JWT authentication.
+The frontend uses React 19 with Vite 7 and React Router 7 for fast routing across Home, Projects, Skills, About, and Connect pages. Tailwind CSS 4 powers a dark, editorial UI with subtle accents, responsive layouts, and consistent typography across every section.
 
-The platform supports real-time collaboration features, discussion forums, and peer review systems, creating an interactive and engaging learning experience. OpenLearn demonstrates expertise in TypeScript development, complex state management, authentication systems, and building scalable educational platforms.`,
+A unified coding activity section combines GitHub and LeetCode contribution data into a single heatmap with diagonal split cells, year filters, and platform breakdowns. Project pages use a centralized data model with slug-based routing, featured work, tech badges, and detailed case-study content.
+
+The site integrates resume download, Cal.com scheduling, social links, and a personal About section with football tournament media. It is deployed on Vercel with SPA routing and a LeetCode API proxy for production data fetching.`,
     featured: false,
-    completionDate: "Nov 2024",
-    technologies: ["TypeScript", "Node.js", "Express.js", "Prisma ORM", "PostgreSQL", "React.js"],
-    imageColor: "bg-yellow-400",
-    image: "/thumbnails/openlearn.png",
-    liveUrl: "https://openlearn-demo.vercel.app",
-    githubUrl: "https://github.com/yourusername/openlearn",
+    completionDate: "Jun 2026",
+    technologies: ["JavaScript", "React.js", "Vite", "React Router", "Tailwind CSS", "Lucide React", "Vercel"],
+    imageColor: "bg-gradient-to-br from-gray-900 to-black",
+    image: "/thumbnails/Portfolio.png",
+    liveUrl: null,
+    githubUrl: "https://github.com/Bhaveshs1212/MyPortfolio",
     timeline: {
-      started: { date: "Sep 1, 2024", label: "Initial development" },
-      published: { date: "Nov 20, 2024", label: "Beta launch" },
-      lastUpdated: { date: "Jan 10, 2026", label: "Latest features" }
+      started: { date: "2025", label: "Initial build" },
+      published: { date: "Jun 2026", label: "Current version" },
+      lastUpdated: { date: "Jun 2026", label: "Latest update" }
     },
     contributors: [
       {
         name: "Bhavesh Singh",
         role: "Full Stack Developer",
         github: "https://github.com/Bhaveshs1212",
-        linkedin: "https://linkedin.com/in/bhaveshsingh"
+        linkedin: "https://linkedin.com/in/bhavesh-singh12"
       }
     ],
     keyFeatures: [
-      "Hierarchical RBAC (5 levels: Grand Pathfinder → Luminary)",
-      "Cohort-based learning with specialization leagues",
-      "Gamified learning with badges, leaderboards, and progress",
-      "Assignment submission, grading, and feedback workflows",
-      "OTP-based email verification and JWT authentication",
-      "Real-time collaboration and discussion forums",
-      "Peer review and mentorship systems",
-      "Progress tracking and analytics dashboard",
-      "Interactive learning materials with rich media support"
+      "Unified GitHub + LeetCode activity heatmap with year filters",
+      "Slug-based project pages with featured work and tech stacks",
+      "Editorial About and Connect pages with resume and scheduling links",
+      "Responsive dark UI with Tailwind CSS 4",
+      "Vercel deployment with SPA routing and API rewrites",
+      "Personal life section with tournament photos and video"
     ]
   }),
 
   new Project({
     id: 4,
-    slug: "webmark",
-    title: "Webmark",
-    tagline: "Master Your Bookmarks with Webmark",
-    shortDescription: "A full-stack bookmark management solution for organizing and categorizing web links with advanced search and cross-device sync.",
-    fullDescription: `Webmark is a sophisticated bookmark management platform designed to help users organize, categorize, and efficiently manage their web bookmarks. The application features an intuitive drag-and-drop interface for easy organization, advanced search and filtering capabilities, and a tag-based categorization system.
+    slug: "ai-ui-generator",
+    title: "Ryze UI Builder",
+    tagline: "Structured dashboard assembly from a fixed component library",
+    shortDescription: "Client project — a TypeScript dashboard builder that composes tables, buttons, and charts from a predefined library into structured UI layouts, with JSX output and live preview. No open-ended AI generation.",
+    fullDescription: `Ryze UI Builder is a client-facing web application I built to help users assemble basic structured dashboards and UI layouts from a fixed set of approved components — not from open-ended AI image or UI generation.
 
-Users can save bookmarks with one-click functionality and enjoy cross-device synchronization for seamless access across multiple platforms. The platform is built with React.js for a responsive frontend experience, Node.js backend for robust API handling, and MongoDB with Redis for optimal data storage and caching.
+The product works within strict boundaries: users choose from predefined building blocks such as tables, buttons, and charts, then combine them into coherent dashboard structures. A design brief input and control actions (generate, regenerate, modify, rollback) drive composition through the allowed library only, producing JSX code output and a live rendered preview side by side.
 
-The application implements real-time updates, folder hierarchies, and collaborative bookmark sharing features. Webmark showcases expertise in building productive tools with excellent UX, implementing efficient search algorithms, and handling real-time data synchronization.`,
+The interface is split into a control sidebar for prompts and actions, a code panel for generated JSX, and a live preview canvas — all in a dark, editorial dashboard layout. Version history lets users roll back to earlier compositions without leaving the workflow.
+
+Built with TypeScript and React, deployed on Vercel at ai-ui-generator-amber.vercel.app. The emphasis throughout was predictable, client-safe UI construction: structured choices, readable code output, and immediate visual feedback — without generating arbitrary UI beyond the supplied component set.`,
     featured: false,
-    completionDate: "Oct 2024",
-    technologies: ["React.js", "Tailwind CSS", "Node.js", "MongoDB", "Redis"],
-    imageColor: "bg-white",
-    image: "/thumbnails/webmark.png",
-    liveUrl: "https://webmark-app.vercel.app",
-    githubUrl: "https://github.com/yourusername/webmark",
+    completionDate: "Feb 2026",
+    technologies: ["TypeScript", "React.js", "Vite", "Tailwind CSS", "Vercel"],
+    imageColor: "bg-gradient-to-br from-orange-900/40 to-black",
+    image: "/thumbnails/RyzeAIUI.png",
+    liveUrl: "https://ai-ui-generator-amber.vercel.app/",
+    githubUrl: "https://github.com/Bhaveshs1212/AI_UI_generator",
     timeline: {
-      started: { date: "Jul 15, 2024", label: "Project kickoff" },
-      published: { date: "Oct 10, 2024", label: "Public release" },
-      lastUpdated: { date: "Dec 15, 2025", label: "Feature updates" }
+      started: { date: "Feb 13, 2026", label: "Client kickoff" },
+      published: { date: "Feb 2026", label: "Deployed to Vercel" },
+      lastUpdated: { date: "Feb 19, 2026", label: "Latest update" }
     },
     contributors: [
       {
         name: "Bhavesh Singh",
-        role: "Full Stack Developer",
+        role: "Frontend Developer",
         github: "https://github.com/Bhaveshs1212",
-        linkedin: "https://linkedin.com/in/bhaveshsingh"
+        linkedin: "https://linkedin.com/in/bhavesh-singh12"
       }
     ],
     keyFeatures: [
-      "Intuitive drag-and-drop organization",
-      "Advanced search and filtering",
-      "Tag-based categorization system",
-      "One-click bookmark saving",
-      "Cross-device synchronization",
-      "Folder hierarchies and nested organization",
-      "Collaborative bookmark sharing",
-      "Browser extension integration",
-      "Bulk import/export functionality"
+      "Predefined component library — tables, buttons, charts, and dashboard blocks",
+      "Structured UI assembly without open-ended AI UI generation",
+      "Design brief input with generate, regenerate, modify, and rollback controls",
+      "Generated JSX output with synchronized live preview",
+      "Version history for iterating on dashboard layouts",
+      "Dark dashboard UI with code and preview split view",
+      "Client project deployed on Vercel"
     ]
   }),
 
@@ -238,52 +237,6 @@ Key features include real-time order status updates, user authentication with JW
       "Order history and tracking",
       "Restaurant menu management",
       "Real-time order status updates"
-    ]
-  }),
-
-  new Project({
-    id: 6,
-    slug: "blogger",
-    title: "Blogger",
-    tagline: "Full-Stack Blog Platform with Admin Panel",
-    shortDescription: "A sophisticated full-stack blog platform that revolutionizes the blogging experience for both creators and readers with comprehensive content management.",
-    fullDescription: `Blogger is a full-featured blogging platform that provides creators with powerful tools to publish, manage, and grow their content while offering readers an engaging and intuitive reading experience. Built with React.js and Node.js, the platform features a rich text editor with formatting capabilities, allowing authors to create beautifully formatted posts with images, code blocks, and multimedia content.
-
-The backend implements a RESTful API using Express.js and MongoDB, handling user authentication, post management, comments, and category organization. JWT-based authentication ensures secure access to author and admin features. The admin panel provides comprehensive CRUD operations for managing posts, users, and comments, along with analytics to track post performance and reader engagement.
-
-Readers can browse posts by category, search for specific topics, leave comments, and interact with content through likes and shares. The platform features a responsive design that adapts seamlessly to different screen sizes, ensuring an optimal reading experience on desktop and mobile devices. Blogger demonstrates expertise in content management systems, user authentication flows, rich text editing, and building scalable web applications.`,
-    featured: false,
-    completionDate: "Jul 2024",
-    technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT"],
-    imageColor: "bg-gradient-to-br from-purple-600 to-purple-800",
-    image: "/thumbnails/blogger.png",
-    liveUrl: "https://blogger-platform.vercel.app",
-    githubUrl: "https://github.com/yourusername/blogger",
-    timeline: {
-      started: { date: "Apr 20, 2024", label: "Project start" },
-      published: { date: "Jul 18, 2024", label: "Beta release" },
-      lastUpdated: { date: "Aug 30, 2024", label: "Feature additions" }
-    },
-    contributors: [
-      {
-        name: "Bhavesh Singh",
-        role: "Full Stack Developer",
-        github: "https://github.com/Bhaveshs1212",
-        linkedin: "https://linkedin.com/in/bhaveshsingh"
-      }
-    ],
-    keyFeatures: [
-      "Professional admin panel with comprehensive CRUD operations",
-      "Rich text editor with formatting capabilities",
-      "User authentication and profile management",
-      "Comment system with moderation",
-      "Category-based content organization",
-      "Post analytics and engagement tracking",
-      "Responsive reading experience",
-      "Search functionality across all posts",
-      "Social sharing integration",
-      "Draft and published post management",
-      "Image upload and optimization"
     ]
   })
 ];
